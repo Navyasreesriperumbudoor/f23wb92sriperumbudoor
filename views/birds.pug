@@ -6,8 +6,14 @@ block content
 
   div(class="container-fluid")
     div(class="row")
-      each bird in results
-        div(class="col-sm-2")
-          p #{bird.bird_name}
-          p #{bird.color}
-          p #{bird.speed}
+      each bird,index  in results 
+        div(class="col-sm-2" onclick =`buy(${index})`) #{bird.name}, #{bird.color}, #{bird.speed}
+    script.
+        function buy(a)
+        {
+            alert(`You purchased Item ${a+1}`)
+        }
+
+
+         
+
